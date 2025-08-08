@@ -1,0 +1,11 @@
+#include<iostream>
+#include<cstring>
+#include<string.h>
+#include<sqlca.h>
+#include<stdlib.h>
+extern "C"{
+void connectToDB();
+void sendOTP();
+void registerOTP();
+void (
+}
