@@ -6,14 +6,22 @@
 extern "C"{
 void connectToDB();
 void sendOTP();
-void registerOTP();
+void registerUSER();
 void saveScore();
-void overALLScore_Rank();
+void getOverallScore();
 void getWeeklyScore();
 }
-int g_retVal = 0;
-string msgType ;
-cin >> msgType;
-switch(msgType) {
-case "SENDOTP" :
-g_retVal = 
+
+void connectToDB(){
+EXEC SQL BEGIN DECLARE SECTION;
+char username[50] = "Mani";
+char password[50] = "WifiPassword";
+EXEC SQL END DECLARE SECTION;
+
+EXEC SQL CONNECT :username IDENTIFIED BY :password;
+if(sqlca.sqlcode ==0 ){
+printf("Database connection is established " );
+}
+else{
+printf("Seeing error in database connection %d",sqlca.sqlcode);
+}
