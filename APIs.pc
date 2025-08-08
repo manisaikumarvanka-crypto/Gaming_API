@@ -7,5 +7,13 @@ extern "C"{
 void connectToDB();
 void sendOTP();
 void registerOTP();
-void (
+void saveScore();
+void overALLScore_Rank();
+void getWeeklyScore();
 }
+int g_retVal = 0;
+string msgType ;
+cin >> msgType;
+switch(msgType) {
+case "SENDOTP" :
+g_retVal = 
